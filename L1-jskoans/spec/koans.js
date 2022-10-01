@@ -20,29 +20,29 @@ describe("JavaScript", function() {
     });
 
     it("operates integers before joining the string", function() {
-      // expect(1 + 1 + "2").toEqual(...); //  give the expected value as argument to toEqual()
+      expect(1 + 1 + "2").toEqual("22"); //  give the expected value as argument to toEqual()
     });
 
     it("knows the type of the variable", function() {
       var x = 1;
 
-      // expect(typeof(x)).toEqual('number'); // types are describes as string in JavaScript 
+       expect(typeof(x)).toEqual('number'); // types are described as string in JavaScript 
     });
 
     it("surprises me, NaN is not comparable with NaN", function() {
-      // expect(5 / "a").toEqual(5 / "a");
-      // expect(typeof(NaN)).toEqual();
-      // expect(isNaN(5 / "a")).toBe....(); // Truthy or Falsy
+      expect(5 / "a").toEqual(5 / "a");
+      expect(typeof(NaN)).toEqual(typeof(NaN));  //NaN stands for NotANumber
+      expect(isNaN(5 / "a")).toBe(true); // Truthy or Falsy
     });
 
     it("considers an empty string to be falsy", function() {
-      //expect("" == false).toBe.....();// Truthy or Falsy
-      //expect("" === false).toBe......();// Truthy or Falsy
+      expect("" == false).toBe(true);// Truthy or Falsy
+      expect("" === false).toBe(false);// Truthy or Falsy
     });
 
     it("considers zero to be falsy", function() {
-      //expect(0 == false).toBe......();// Truthy or Falsy
-      //expect(0 === false).toBe.....();// Truthy or Falsy
+      expect(0 == false).toBe(true);// Truthy or Falsy
+      expect(0 === false).toBe(false);// Truthy or Falsy
     });
 
     it("considers nulls to be falsy", function() {
@@ -55,15 +55,15 @@ describe("JavaScript", function() {
          result = false;
       }
 
-      //expect(result == false).toBe......();// Truthy or Falsy
-      //expect(null === false).toBe.....();// Truthy or Falsy
-      //expect(null == false).toBe....();// Truthy or Falsy
+      expect(result == false).toBe(true);// Truthy or Falsy
+      expect(null === false).toBe(false);// Truthy or Falsy
+      expect(null == false).toBe(false);// Truthy or Falsy
     });
 
     it("knows the type of a function", function() {
       function x(){}
 
-      //expect(typeof(x)).toBe('...');
+      expect(typeof(x)).toBe('function');
     });
 
     it("has arrays and they can contain anything inside", function() {
@@ -72,19 +72,19 @@ describe("JavaScript", function() {
       arr[9] = 6;
       var matrix = [['a', 'b', 'c'], ['d', 'e', 'f'], ['g', 7, 8]];
 
-      /*
-      expect(arr[1]).toEqual();
-      expect(arr[4]).toEqual();
-      expect(arr[6]).toEqual();
-      expect(arr[9]).toEqual();
-      expect(matrix[0][2]).toEqual();
-      */
+      
+      expect(arr[1]).toEqual(2);
+      expect(arr[4]).toEqual(5);
+      expect(arr[6]).toEqual(undefined);
+      expect(arr[9]).toEqual(6);
+      expect(matrix[0][2]).toEqual('c');
+      
     });
 
     it("may contain functions inside arrays", function() {
       var arr = [1,2, function(arg){ return 3 + arg;}];
 
-      //expect(arr[2](1)).toEqual();
+      expect(arr[2](1)).toEqual(4);
     });
 
     it("concatenate arrays in an 'interesting' way", function() {
