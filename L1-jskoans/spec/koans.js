@@ -91,14 +91,14 @@ describe("JavaScript", function() {
       var a = [1,2,3];
       var b = [4,5,6];
 
-      // expect(a + b).toEqual();
+      expect(a + b).toEqual('1,2,34,5,6');
     });
 
     it("joins arrays and other things in an 'interesting' way", function() {
       var a = [1,2,3];
 
-      //expect ("1" + a).toEqual();
-      //expect(a + "1").toEqual();
+      expect ("1" + a).toEqual('11,2,3');
+      expect(a + "1").toEqual('1,2,31');
       //expect(1 + a).toEqual();
       //expect(a + 1).toEqual();
 
