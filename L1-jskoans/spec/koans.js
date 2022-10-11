@@ -99,29 +99,29 @@ describe("JavaScript", function() {
 
       expect ("1" + a).toEqual('11,2,3');
       expect(a + "1").toEqual('1,2,31');
-      //expect(1 + a).toEqual();
-      //expect(a + 1).toEqual();
+      expect(1 + a).toEqual('11,2,3');
+      expect(a + 1).toEqual('1,2,31');
 
       var b = ['x', 'y', 'z'];
 
-      //expect(1 + b).toEqual();
-      //expect(true + a).toEqual();
+      expect(1 + b).toEqual('1x,y,z');
+      expect(true + a).toEqual('true1,2,3');
     });
 
     it("can't compare arrays", function() {
       var a = [1,2,3];
       var b = [1,2,3];
 
-      //expect(a == b).toBe.....();  // Truthy or Falsy
-      //expect(a === b).toBe.....(); // Truthy or Falsy
+      expect(a == b).toBe(false);  // Truthy or Falsy
+      expect(a === b).toBe(false); // Truthy or Falsy
     });
 
     it("is not the same to compare by value than by reference ", function() {
       var a = [1,2,3];
       var b = [1,2,3];
 
-      //expect(a).toEqual(b);        // Jasmine toEqual compares by value
-      //expect(a).not.toBe(b);       // Jasmine toBe compares by reference
+      expect(a).toEqual(b);        // Jasmine toEqual compares by value
+      expect(a).not.toBe(b);       // Jasmine toBe compares by reference
     });
   });
 
@@ -131,8 +131,7 @@ describe("JavaScript", function() {
       function example() {
         return 'some example';
       }
-
-      //expect(example()).toEqual();
+      expect(example()).toEqual('some example');
     });
 
     it("can declare anonymous functions", function() {
