@@ -3,8 +3,10 @@
 // NOT WORKING
 
 /*
-const array1 = [prompt('Enter the number of players')];
-for (var i = 0; i < array1.length; i++)
+const arraySize = prompt('Enter the number of players'); 
+
+const array1 = [arraySize];
+for (var i = 0; i < +array1.length; i++)
 {
   prompt("enter the name of player " + i);
   console.log(array1[i]);
