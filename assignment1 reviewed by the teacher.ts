@@ -28,16 +28,16 @@ if (arraySize <= 0 || isNaN(arraySize)) {
   console.log("is not a number or there cannot be zero players")
 }
 
-const randomColour = (): string => {
-  const colours: string[] = [BgYellow, BgBlue, BgCyan, BgMagenta, BgYellow, BgWhite];
-  return colours[Math.floor(Math.random() * colours.length)] 
+const inOrderColour = (ncolours: number): string => {
+  const colours: string [] = [BgYellow, BgBlue, BgMagenta, BgCyan, BgWhite];
+  return colours[ncolours];
 }
 
 const createPlayers = (nplayers: number): Player[] => {
     const players: Player[] = [];
     for (let i = 0; i < nplayers; i++) {
         const playername = input("enter the name of player " + i) ?? " "
-        const playercolour = randomColour()
+        const playercolour = inOrderColour(i)
         const player:Player = {name: playername,colour: playercolour};
         players[i] = player;
     }
