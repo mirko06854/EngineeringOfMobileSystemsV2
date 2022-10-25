@@ -128,8 +128,20 @@ const createPlayers = (nplayers: number): Player[] => {
 
 // write a function that throws 5 dice
 const throwDiceFunction = (nDice: number): number [] => {
-  
+
+  if(nDice > 0) {
+    let arr: number[] = [];
+    for (let die = 0; die < nDice; die ++){
+     // arr.fill(getRandomInt(6), die);
+      arr.push(getRandomInt(6))
+      console.log(arr)
+    }
+    return arr;
+  }
+  return []
 }
+
+console.log(throwDiceFunction(arraySize))
 
 // function that show the values of the dice 
 const printValues = (diceList :number[]): string => {
