@@ -1,0 +1,18 @@
+old :
+
+const throwsandchoose = (): number[] => {
+  diceKept(diceList)
+    printValues(throwRemainingDiceOnTableFunction(diceKept(diceList).length));
+  return diceKept(diceList)
+}
+console.log(throwsandchoose());
+
+
+
+
+IDEA: try using a switch, for each throw :
+
+
+if throw = 0 , not keep anything. --> output original list without asking anything.
+if throw = 1 , keep how many dices the user says.  --> output these.
+if throw = 2, keep the previous printed dice - further choice of users --> output these. 
